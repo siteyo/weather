@@ -1,51 +1,64 @@
 import React, { FC } from 'react';
-
 import { makeStyles, Theme } from '@material-ui/core/styles';
+import Typography from '@material-ui/core/Typography';
 
-const useSmallStyles = makeStyles((theme: Theme) => ({
-  text: {
+const useStyles = makeStyles((theme: Theme) => ({
+  title: {
+    width: '100%',
+    maxWidth: 500,
+  },
+  smallTxt: {
+    width: '100%',
+    maxWidth: 500,
     fontSize: '.8rem',
   },
-}));
-
-const useMidiumStyles = makeStyles((theme: Theme) => ({
-  text: {
+  midiumTxt: {
+    width: '100%',
+    maxWidth: 500,
     fontSize: '1rem',
   },
-}));
-
-const useLargeStyles = makeStyles((theme: Theme) => ({
-  text: {
+  largeTxt: {
+    width: '100%',
+    maxWidth: 500,
     fontSize: '1.2rem',
   },
 }));
 
-const SmallTxt: FC = ({ children }) => {
-  const classes = useSmallStyles();
+const TitleTxt: FC = props => {
+  const classes = useStyles();
   return (
-    <>
-      <p className={classes.text}>{children}</p>
-    </>
+    <Typography className={classes.title} variant="h1" gutterBottom>
+      {props.children}
+    </Typography>
   );
 };
 
-const MidiumTxt: FC = ({ children }) => {
-  const classes = useMidiumStyles();
+const SmallTxt: FC = props => {
+  const classes = useStyles();
   return (
-    <>
-      <p className={classes.text}>{children}</p>
-    </>
+    <Typography className={classes.smallTxt} variant="body1" gutterBottom>
+      {props.children}
+    </Typography>
   );
 };
 
-const LargeTxt: FC = ({ children }) => {
-  const classes = useLargeStyles();
+const MidiumTxt: FC = props => {
+  const classes = useStyles();
   return (
-    <>
-      <p className={classes.text}>{children}</p>
-    </>
+    <Typography className={classes.midiumTxt} variant="body1" gutterBottom>
+      {props.children}
+    </Typography>
   );
 };
 
-export { SmallTxt, MidiumTxt, LargeTxt };
+const LargeTxt: FC = props => {
+  const classes = useStyles();
+  return (
+    <Typography className={classes.largeTxt} variant="body1" gutterBottom>
+      {props.children}
+    </Typography>
+  );
+};
+
+export { TitleTxt, SmallTxt, MidiumTxt, LargeTxt };
 export default MidiumTxt;
