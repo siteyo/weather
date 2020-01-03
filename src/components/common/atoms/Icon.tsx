@@ -40,4 +40,4 @@ const SunnyIcon: FC<IconProps> = ({ size = 80 }) => (
   />
 );
 
-export { SprinkleIcon, DrizzleIcon, PourIcon };
+export { SprinkleIcon, DrizzleIcon, PourIcon, SunnyIcon };

@@ -5,7 +5,7 @@ import Weather from 'components/Weather';
 const App: React.FC = () => {
   return (
     <div>
-      <Weather />
+      <Weather>Test</Weather>
     </div>
   );
 };
